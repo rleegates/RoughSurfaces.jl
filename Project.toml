@@ -1,7 +1,7 @@
 name = "RoughSurfaces"
 uuid = "381b59a5-910b-47a1-8113-34fc61befd2a"
 authors = ["Robert Lee Gates <rleegates@users.noreply.github.com> and contributors"]
-version = "1.0.0-DEV"
+version = "0.1.1"
 
 [compat]
 julia = "1"
