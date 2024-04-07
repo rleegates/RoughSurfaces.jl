@@ -94,11 +94,13 @@ end
 struct RoughSurface
     ftdom::FTDomain
 	ftrep::Matrix{Complex{Float64}}
+	psdkern::PSDKernel
+	ftwhit::FTWhiteNoise
 	function RoughSurface(ftdom::FTDomain, psd::AbstractPSD, ftwhit::FTWhiteNoise)
 		(Lx, Ly) = ftdom.L
         psdkern = PSDKernel(ftdom, psd)
 		ftrep = psdkern.G .* ftwhit.Z * 1/Lx * 1/Ly
-		return new(ftdom, ftrep)
+		return new(ftdom, ftrep, psdkern, ftwhit)
 	end
 end
 
